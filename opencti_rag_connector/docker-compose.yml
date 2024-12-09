@@ -1,0 +1,23 @@
+version: '3'
+services:
+  opencti-rag-connector:
+    build: .
+    container_name: openti_rag_connector
+    environment:
+      - OPENCTI_URL=http://opencti:8080
+      - OPENCTI_TOKEN=<INSERT TOKEN HERE>
+      - CONNECTOR_ID=<INSERT ID HERE>
+      - CONNECTOR_NAME=OpenCTI LLM/RAG Connector
+      - CONNECTOR_SCOPE=OpenCTI LLM/RAG Connector
+      - CONNECTOR_LOG_LEVEL=info
+      - CONNECTOR_IMPORT_REPORTS_AFTER=2000-12-01
+      - CONNECTOR_DURATION_PERIOD=PT5M # ISO8601 format in String, start with 'P...' for Period
+      - CONNECTOR_ELASTICSEARCH_URL=http://172.17.0.1:9200
+      - CONNECTOR_ELASTICSEARCH_INDEX=octi_rag
+      - CONNECTOR_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+    restart: always
+
+networks:
+  default:
+    external: true
+    name: opencti_default

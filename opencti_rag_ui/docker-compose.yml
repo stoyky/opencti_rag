@@ -1,0 +1,12 @@
+version: '3'
+services:
+  opencti_rag_ui:
+    build: .
+    ports:
+      - "8501:8501"
+    restart: always 
+
+networks:
+  default:
+    external: true
+    name: opencti_default

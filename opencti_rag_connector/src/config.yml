@@ -1,0 +1,15 @@
+opencti:
+  url: 'http://localhost:8080'
+  token: '<INSERT TOKEN HERE>'
+
+connector:
+  id: '<INSERT ID HERE>'
+  type: 'EXTERNAL_IMPORT'
+  name: 'OpenCTI LLM/RAG Connector'
+  scope: 'all'
+  log_level: 'info'
+  duration_period: 'PT5M' # Interval given for scheduler process in ISO-8601 format
+  elasticsearch_url: 'http://localhost:9200'
+  elasticsearch_index: "octi_rag"
+  import_reports_after: "2000-12-01"
+  embedding_model: "BAAI/bge-small-en-v1.5"
