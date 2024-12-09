@@ -5,7 +5,7 @@ This repository contains the OpenCTI RAG System as is described on [my blog](htt
 1. Make sure to have a [dockerized OpenCTI instance](https://github.com/OpenCTI-Platform/docker) up and running. I'm assuming the network it creates is *opencti_default*. 
 2. Start up the Ollama Docker and pull the Mistral-7B Instruct model:
 ```bash
-$ cd ollama-docker
+$ cd ollama_docker
 $ docker-compose up -d 
 $ docker exec -it ollama ollama run mistral:7b-instruct
 ```
